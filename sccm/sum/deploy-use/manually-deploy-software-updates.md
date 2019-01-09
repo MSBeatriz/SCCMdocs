@@ -157,6 +157,11 @@ After you determine the updates you want to deploy, and add them to a software u
    -   **User notifications**: Specify whether to display notification in Software Center at the configured **Software available time**. This setting also controls whether to notify users on the client computers. For **Available** deployments, you can't select the option to **Hide in Software Center and all notifications**.  
 
    -   **Deadline behavior**: This setting is only configurable for **Required** deployments. Specify the behaviors when the software update deployment reaches the deadline outside of any defined maintenance windows. The options include whether to install the software updates, and whether to perform a system restart after installation. For more information about maintenance windows, see [How to use maintenance windows](/sccm/core/clients/manage/collections/use-maintenance-windows).  
+   
+   > [!Note] 
+   > This setting only apply when maintenance window is configured for the device. If no maintenance window is applied on the client, installation and restart will always happen after deadline is reached.
+   
+    ConfigMgr will place an icon in the notification tray and will pop a balloon notification saying that a reboot is required, but it will never force one.
 
    -   **Device restart behavior**: This setting is only configurable for **Required** deployments. Specify whether to suppress a system restart on servers and workstations if a restart is required to complete update installation.  
 
